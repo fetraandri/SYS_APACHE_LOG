@@ -32,7 +32,20 @@ $ summarise 404 requests
 
 awk '($9 ~ /404/)' combined_log | awk '{print $9,$7}' | sort 
 
+### 6.Modifiez les valeurs USER-AGENT pour refléter vos besoins. 
 
+$ RewriteCond %{HTTP_USER_AGENT} (gumgum-bot|postmanruntime|ag_dm_spider|scrapy|chimebot) [NC]
+
+### Redémarrez le service Apache 
+
+$ service apache2 restart
+
+
+#### 
+
+Félicitations! Vous avez appris à configurer le serveur Apache pour refuser l’accès aux utilisateurs et Crawlers.👏👏
+
+ 
 
 
 
